@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Test Data Filler",
+  "version": "2.0.0",
+  "description": "Fills forms with realistic test data for Pakistan, UAE, Saudi Arabia, India, US, UK and more.",
+  "permissions": ["activeTab", "scripting", "storage", "contextMenus"],
+  "action": { "default_popup": "popup/popup.html" },
+  "options_page": "options/options.html",
+  "background": { "service_worker": "background.js", "type": "module" },
+  "commands": {
+    "fill-form": {
+      "suggested_key": { "default": "Alt+Shift+F" },
+      "description": "Fill the current form"
+    }
+  }
+}

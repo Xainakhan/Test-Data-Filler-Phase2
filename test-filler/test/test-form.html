@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PK Test Filler - test form</title>
+  <style>
+    body { font-family: sans-serif; max-width: 560px; margin: 20px auto; }
+    label { display: block; margin-top: 10px; }
+    input[type=text], input[type=email], input[type=tel], input[type=password],
+    input[type=url], input[type=date], input[type=number], select, textarea { width: 100%; }
+  </style>
+</head>
+<body>
+  <h2>Test form</h2>
+  <form id="form">
+    <label for="fname">First name</label>
+    <input id="fname" name="fname" type="text" />
+
+    <label for="lname">Last name</label>
+    <input id="lname" name="lname" type="text" />
+
+    <label for="full">Full name</label>
+    <input id="full" name="full_name" type="text" />
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" />
+
+    <label for="email_ur">ای میل</label>
+    <input id="email_ur" type="text" />
+
+    <label for="mobile">Mobile (maxlength 11)</label>
+    <input id="mobile" name="mobile" type="tel" maxlength="11" />
+
+    <label for="mobile2">Phone</label>
+    <input id="mobile2" name="phone2" type="text" placeholder="0300-1234567" />
+
+    <label for="wa">WhatsApp</label>
+    <input id="wa" name="whatsapp" type="text" placeholder="+92 300 1234567" />
+
+    <label for="cnic">CNIC</label>
+    <input id="cnic" name="cnic" type="text" placeholder="XXXXX-XXXXXXX-X" maxlength="15" />
+
+    <label for="eid">Emirates ID / National ID</label>
+    <input id="eid" name="national_id" type="text" />
+
+    <label for="dial">Country code</label>
+    <select id="dial" name="country_code">
+      <option value="">Select</option>
+      <option>+1</option><option>+44</option><option>+49</option><option>+91</option>
+      <option>+92</option><option>+966</option><option>+971</option>
+    </select>
+
+    <label for="cnic2">CNIC (13 digits, no dashes)</label>
+    <input id="cnic2" name="cnic_number" type="text" pattern="[0-9]{13}" />
+
+    <label for="dob">Date of birth</label>
+    <input id="dob" name="dob" type="date" />
+
+    <label for="age">Age (18 to 60)</label>
+    <input id="age" name="age" type="number" min="18" max="60" />
+
+    <fieldset>
+      <legend>Gender</legend>
+      <label><input type="radio" name="gender" value="male" /> Male</label>
+      <label><input type="radio" name="gender" value="female" /> Female</label>
+    </fieldset>
+
+    <label for="address">Address</label>
+    <textarea id="address" name="address"></textarea>
+
+    <label for="city">City</label>
+    <select id="city" name="city">
+      <option value="">Select city</option>
+      <option>Lahore</option><option>Karachi</option><option>Islamabad</option>
+      <option>Rawalpindi</option><option>Peshawar</option><option>Quetta</option>
+      <option>Faisalabad</option><option>Multan</option>
+    </select>
+
+    <label for="province">Province</label>
+    <select id="province" name="province">
+      <option value="">Select province</option>
+      <option>Punjab</option><option>Sindh</option><option>Khyber Pakhtunkhwa</option>
+      <option>Balochistan</option><option>Islamabad</option>
+    </select>
+
+    <label for="postal">Postal code</label>
+    <input id="postal" name="postal_code" type="text" maxlength="5" />
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="">Select country</option>
+      <option>United Arab Emirates</option><option>Pakistan</option><option>United States</option>
+      <option>Saudi Arabia</option><option>India</option><option>United Kingdom</option>
+      <option>Germany</option><option>Japan</option>
+    </select>
+
+    <label for="company">Company name</label>
+    <input id="company" name="company" type="text" />
+
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" />
+
+    <label for="pw">Password</label>
+    <input id="pw" name="password" type="password" />
+
+    <label for="pw2">Confirm password</label>
+    <input id="pw2" name="confirm_password" type="password" />
+
+    <label for="site">Website</label>
+    <input id="site" name="website" type="url" />
+
+    <label for="msg">Message</label>
+    <textarea id="msg" name="comments"></textarea>
+
+    <label for="unknown">Unknown field (should stay empty)</label>
+    <input id="unknown" name="xyz_ref_code" type="text" />
+
+    <label for="ro">Read-only (should stay as is)</label>
+    <input id="ro" name="ro_name" type="text" value="keep me" readonly />
+
+    <label for="dis">Disabled (should stay empty)</label>
+    <input id="dis" name="dis_name" type="text" disabled />
+
+    <label><input id="terms" name="terms" type="checkbox" required /> I agree to the terms</label>
+    <label><input id="news" name="newsletter" type="checkbox" /> Newsletter (should stay unchecked)</label>
+
+    <label for="shadow-host">Shadow DOM field</label>
+    <div id="shadow-host"></div>
+
+    <p><button type="submit">Submit</button></p>
+  </form>
+
+  <script>
+    const root = document.getElementById("shadow-host").attachShadow({ mode: "open" });
+    root.innerHTML = '<input name="shadow_email" type="text" placeholder="Email (inside shadow DOM)" />';
+  </script>
+</body>
+</html>

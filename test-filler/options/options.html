@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Test Filler - Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <h1>Test Filler</h1>
+
+    <label class="row">
+      Country
+      <select id="country"></select>
+    </label>
+
+    <label class="row">
+      If the page doesn't show a country, use
+      <select id="fallbackCountry"></select>
+    </label>
+
+    <label class="row">
+      Name / address script
+      <select id="script">
+        <option value="latin">Latin (English)</option>
+        <option value="native">Native (Urdu / Arabic where available)</option>
+        <option value="mixed">Mixed (random per fill)</option>
+      </select>
+    </label>
+
+    <label class="row">
+      <input type="checkbox" id="overwrite" />
+      Overwrite fields that already have a value
+    </label>
+
+    <label class="row">
+      <input type="checkbox" id="highlight" />
+      Briefly outline filled fields
+    </label>
+
+    <p id="status" role="status"></p>
+
+    <script src="../content/core/namespace.js"></script>
+    <script src="../content/core/settings.js"></script>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>
